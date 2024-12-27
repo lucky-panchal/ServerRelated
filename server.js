@@ -2,6 +2,8 @@ const express = require ('express');
 const app= express();
 const Model=require ('./model/userSchema')
 const PORT = 3030;
+const connectDB= require('./config/db')
+connectDB()
 
 app.get('/', (req, res) => {
  res.send("hello , lux here...")

@@ -8,4 +8,5 @@ function connectDB() {
     .catch((err) => console.error("Connection Error", err));
 }
 
-module.exports = connectDb;
+
+module.exports = connectDB;
