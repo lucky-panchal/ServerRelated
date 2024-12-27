@@ -13,7 +13,7 @@ const foodSchema = mongoose.Schema({
                     price : Number,
                     rating: String,
                     PreparedBy: String
-                    },
+                    },  
                 Nonvegitarian :{
                     name : String,
                     price : Number,
@@ -49,6 +49,7 @@ const foodSchema = mongoose.Schema({
                 PreparedBy: String
                 },
             }    
+            
                 }
                 }  
 )
