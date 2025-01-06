@@ -19,13 +19,12 @@ try{
     const user = await UserModel.create(req.body.name)
     UserModel.save();
     return res.send({message: "User Created Successfully"})
-
 }
 catch(err){
     return res.send(err)
 }
     try{
-        app.put("/update/id" , async (req,res)=>{
+        app.put("/update/:id" , async (req,res)=>{
         const id =req.params.id;
         const{name,email,password} =req.body
         const userExist = await UserModel.findOneAndUpdate({name})
