@@ -44,7 +44,7 @@ app.delete('/delete/:_id',   async (req, res) => {
 app.put('/update/:_id', async (req, res) => {
     const itemId = req.params._id
     const updateId = req.body
-    console.log(updateId)
+    console.log(updateId," = UpdatedSuccessfull")
     const userUpdate = await UserModel.findByIdAndUpdate({ _id: itemId }, updateId, { name: true })
     try {
         if (userUpdate) {
