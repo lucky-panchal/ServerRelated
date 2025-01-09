@@ -15,14 +15,18 @@ app.get('/', (req, res) => {
 app.post('/register', async (req, res) => {
 try{
     const {email,name,password} = req.body
-    const userExist = await UserModel.findOne({name})
+    
+    const userExist = await UserModel.findOne({email})
     if(userExist){
-     return res.send({message: "User Existed"})
+     console.log("User Existed , Please Give Valid Requirements");
+     return res.send({message: "User Existed , Please Give Valid Requirements"});
+     
     }
-    const user = await UserModel.create(req.body.name)
-    UserModel.save();
-    return res.send({message: "User Created Successfully"})
-}
+    const user = await UserModel.create(req.body)
+        await user.save();
+         console.log("User Create Succesfully...");
+         console.log(user)
+         res.send({message: "User Created successfully"})}
 catch(err){
     return res.send(err)
 }    
