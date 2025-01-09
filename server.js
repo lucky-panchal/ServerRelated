@@ -37,8 +37,8 @@ app.delete('/delete/:_id',   async (req, res) => {
     }
 })
 
-app.put('/update/:id', async (req, res) => {
-    const itemId = req.params.id
+app.put('/update/:_id', async (req, res) => {
+    const itemId = req.params._id
     const updateId = req.body
     console.log(updateId)
     const userUpdate = await UserModel.findByIdAndUpdate({ _id: itemId }, updateId, { name: true })
