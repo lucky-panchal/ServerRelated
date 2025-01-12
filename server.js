@@ -44,10 +44,10 @@ app.post('/login', async (req,res) =>{
     const isMatch= await bcrypt.compare(password, user.password);
 
     if(isMatch){
-        console.log("Login Successfull")
-        res.send({mesaage: "Login Successfull"})
+        console.log("Login Successfull" , user);
+        res.send({mesaage: "User Login Successfully"});
     }
-      res.send({message: "Invalid User and Password"})
+      res.send({message: "Invalid User and Password"});
     }
     catch(err){
         return res.send(err)
