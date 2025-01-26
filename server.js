@@ -23,7 +23,6 @@ app.post('/check-password', async (req, res) => {
       if (!user) {
         return res.send({ isValid: false, error: 'User  not found' });
       }
-  
       const isMatch = await bcrypt.compare(oldpass, user.password);
       if (isMatch) {
         return res.send({ isValid: true });
